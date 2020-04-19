@@ -16,11 +16,15 @@ public class GioHang {
         this.hinhThucTT = hinhThucTT;
     }
     
-    public double thanhToan(){
-        double sum = 0;
+    public int tongTienHang(){
+        int sum = 0;
         for (HangHoa hangHoa : hangHoas) {
-            sum+= hinhThucTT.thanhToan(hangHoa.getGia());
+            sum+= hangHoa.getGia();
         }
         return sum;
+    }
+    
+    public double thanhToan(){
+        return hinhThucTT.thanhToan(tongTienHang());
     }
 }
